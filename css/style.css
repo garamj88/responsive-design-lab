@@ -1,0 +1,212 @@
+html {
+  box-sizing: border-box
+}
+
+/* The Universal Selector */
+*, /* All elements*/
+*::before, /* All ::before pseudo-elements */
+*::after { /* All ::after pseudo-elements */
+  /* height & width will now include border & padding by default
+     but can be over-ridden as needed */
+  box-sizing: inherit;
+}
+
+/* resets font size to be 62.5% of the user preference - 
+   in most browser configurations this will be 10px */
+:root {
+  font-size: 62.5%;
+}
+body {
+  background-color: white;
+/* Use a system font, if none are available use an available sans-sarif   font */
+  font-family: 'Open Sans', sans-serif;
+  margin: 0 auto;
+  min-height: 100vh;
+  font-size: 2rem;
+  display: grid;
+  grid-template-columns: 40% 3% 57%;
+  grid-template-rows: 15% 35% 30% 20%;
+  grid-template-areas: 
+  "status none name"
+  "img none rate-ttl"
+  "img none desc"
+  "contact none rate-quote";
+}
+
+#status {
+  grid-area: status;
+  display: grid;
+  color: gray;
+  margin: 0;
+  padding: 3%;
+}
+
+img {
+  grid-area: img;
+  display: grid;
+  border-radius: 50%;
+  border: 5px solid limegreen;
+  margin: 0 auto;
+  align-items: center;
+}
+
+#contact {
+  grid-area: contact;
+  display: flex;
+  grid-template-columns: 50% 50%;
+  background: linear-gradient(to right, #8fdf8f 0%, #86d086 50%, #66bb78 50%, #66bb78 100%);
+  align-items: center;
+}
+
+#contact p {
+  width: 50%;
+  text-align: center;
+}
+
+#blank {
+  grid-area: none;
+  margin: 0;
+  background-color: #eeecec;
+}
+
+#name, #rate-ttl, #rating, #desc, #rate-quote {
+  background-color: #eeecec;
+  margin: 0;
+  display: grid;
+}
+
+#name {
+  grid-area: name;
+  align-items: end;
+}
+
+#rate-ttl {
+  align-self: stretch;
+}
+
+#rating {
+  padding-top: 2%;
+  color: #ffd900;
+  display: inline-block;
+}
+span {
+  color: #d4d4d4;
+}
+
+#title {
+  margin: 0;
+  padding-bottom: 5%;
+  align-items: start;
+}
+
+#desc {
+  grid-area: desc;
+  border-left: 5px solid #14ac00b2;
+  color: #555555;
+  padding: 0 3%;
+  align-self: stretch;
+}
+
+#rate-quote{
+  grid-area: rate-quote;
+  padding: 3% 0;
+  align-self: stretch;
+}
+
+@media only screen and (max-width: 768px) {
+  body {
+    background-color: white;
+  /* Use a system font, if none are available use an available sans-sarif   font */
+    font-family: 'Open Sans', sans-serif;
+    margin: 0 auto;
+    min-height: 100vh;
+    font-size: 2rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 5% 30% 10% 20% 20% 15%;
+    grid-template-areas: 
+    "status"
+    "img"
+    "name"
+    "rate-ttl"
+    "rate-quote"
+    "contact";
+  }
+  
+  #blank, #desc {
+    display: none;
+  }
+    
+  #status {
+    grid-area: status;
+    display: grid;
+    color: gray;
+    margin: 0;
+    padding: 3%;
+  }
+  
+  img {
+    grid-area: img;
+    display: grid;
+    border-radius: 50%;
+    border: 5px solid limegreen;
+    margin: 0 auto;
+  }
+  
+  #name, #rate-ttl, #rating, #rate-quote {
+    background-color: white;
+    margin: 0;
+    display: grid;
+    text-align: center;
+  }
+  
+  #name {
+    grid-area: name;
+    font-size: 1.7em;
+    align-items: center;
+  }
+  
+  #rate-ttl {
+    grid-area: rate-ttl;
+    align-items: center;
+    background-color: #eeecec;
+  }
+  
+  #rating {
+    background-color: #eeecec;
+    padding-top: 2%;
+    color: #ffd900;
+    display: inline-block;
+  }
+  span {
+    color: #d4d4d4;
+  }
+  
+  #title {
+    margin: 0;
+    padding-bottom: 3%;
+    align-items: start;
+  }
+
+  #rate-quote{
+    margin: 0;
+    font-size: 1.3em;
+    grid-area: rate-quote;
+    padding: 3% 0;
+    align-self: center;
+  }
+
+  #contact {
+    grid-area: contact;
+    display: flex;
+    grid-template-columns: 50% 50%;
+    background: linear-gradient(to right, #8fdf8f 0%, #86d086 50%, #66bb78 50%, #66bb78 100%);
+    align-items: center;
+  }
+  
+  #contact p {
+    width: 50%;
+    text-align: center;
+  }
+  
+}
